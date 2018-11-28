@@ -3,7 +3,7 @@ import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 
-class ProfileOnePage extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
   var deviceSize;
 
   //Column1

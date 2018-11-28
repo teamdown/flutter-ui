@@ -29,6 +29,9 @@ class CommonDrawer extends StatelessWidget {
               Icons.person,
               color: Colors.blue,
             ),
+            onTap: () {
+              Navigator.of(context).pushNamed(UIData.profile);
+            },
           ),
           new ListTile(
             title: Text(
@@ -39,37 +42,9 @@ class CommonDrawer extends StatelessWidget {
               Icons.shopping_cart,
               color: Colors.green,
             ),
-          ),
-          new ListTile(
-            title: Text(
-              "Dashboard",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
-            ),
-            leading: Icon(
-              Icons.dashboard,
-              color: Colors.red,
-            ),
-          ),
-          new ListTile(
-            title: Text(
-              "Timeline",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
-            ),
-            leading: Icon(
-              Icons.timeline,
-              color: Colors.cyan,
-            ),
-          ),
-          Divider(),
-          new ListTile(
-            title: Text(
-              "Settings",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
-            ),
-            leading: Icon(
-              Icons.settings,
-              color: Colors.brown,
-            ),
+            onTap: () {
+              Navigator.of(context).pushNamed(UIData.home);
+            },
           ),
           Divider(),
           MyAboutTile()

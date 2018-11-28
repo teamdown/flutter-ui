@@ -1,48 +1,101 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uikit/inherited/login_provider.dart';
-import 'package:flutter_uikit/ui/page/login/login_one/login_widget.dart';
-import 'package:flutter_uikit/ui/widgets/login_background.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
-enum LoginValidationType { phone, otp }
-
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   @override
-  LoginPageState createState() {
-    return LoginPageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: loginBody(context),
+      ),
+    );
   }
-}
 
-class LoginPageState extends State<LoginPage> {
-  final scaffoldState = GlobalKey<ScaffoldState>();
-  Widget loginScaffold() => LoginProvider(
-        validationErrorCallback: showValidationError,
-        child: Scaffold(
-          key: scaffoldState,
-          backgroundColor: Color(0xffeeeeee),
-          body: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[LoginBackground(), LoginWidgets()],
-          ),
+  loginBody(BuildContext context) => SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[loginHeader(context), loginFields(context)],
         ),
       );
 
-  showValidationError(LoginValidationType type) {
-    scaffoldState.currentState.showSnackBar(SnackBar(
-      content: Text(type == LoginValidationType.phone
-          ? UIData.enter_valid_number
-          : UIData.enter_valid_otp),
-      duration: Duration(seconds: 2),
-    ));
-  }
+  loginHeader(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          FlutterLogo(
+            colors: Colors.green,
+            size: 80.0,
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          Text(
+            "Welcome to ${UIData.appName}",
+            style: TextStyle(fontWeight: FontWeight.w700, color: Colors.green),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Text(
+            "Sign in to continue",
+            style: TextStyle(color: Colors.grey),
+          ),
+        ],
+      );
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return loginScaffold();
-  }
+  loginFields(BuildContext context) => Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
+              child: TextField(
+                maxLines: 1,
+                decoration: InputDecoration(
+                  hintText: "Enter your username",
+                  labelText: "Username",
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              child: TextField(
+                maxLines: 1,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: "Enter your password",
+                  labelText: "Password",
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              width: double.infinity,
+              child: RaisedButton(
+                padding: EdgeInsets.all(12.0),
+                shape: StadiumBorder(),
+                child: Text(
+                  "SIGN IN",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.green,
+                onPressed: () {
+                  Navigator.of(context).pushNamed(UIData.home);
+                },
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text(
+              "SIGN UP FOR AN ACCOUNT",
+              style: TextStyle(color: Colors.grey),
+            ),
+          ],
+        ),
+      );
 }

@@ -96,7 +96,9 @@ class CommonScaffold extends StatelessWidget {
             width: 5.0,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(UIData.payment);
+            },
             icon: Icon(actionFirstIcon),
           ),
           IconButton(

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_uikit/utils/uidata.dart';
+
 import 'package:flutter_uikit/logic/bloc/product_bloc.dart';
 import 'package:flutter_uikit/model/product.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
@@ -74,7 +77,8 @@ class ShoppingOnePage extends StatelessWidget {
         ),
       );
 
-  Widget productGrid(List<Product> products) => GridView.count(
+  Widget productGrid(BuildContext context, List<Product> products) =>
+      GridView.count(
         crossAxisCount:
             MediaQuery.of(_context).orientation == Orientation.portrait ? 2 : 3,
         shrinkWrap: true,
@@ -83,6 +87,9 @@ class ShoppingOnePage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.yellow,
+                    onTap: () {
+                      Navigator.of(context).pushNamed(UIData.details);
+                    },
                     onDoubleTap: () => showSnackBar(),
                     child: Material(
                       clipBehavior: Clip.antiAlias,
@@ -107,7 +114,7 @@ class ShoppingOnePage extends StatelessWidget {
         stream: productBloc.productItems,
         builder: (context, snapshot) {
           return snapshot.hasData
-              ? productGrid(snapshot.data)
+              ? productGrid(context, snapshot.data)
               : Center(child: CircularProgressIndicator());
         });
   }
@@ -129,9 +136,10 @@ class ShoppingOnePage extends StatelessWidget {
     _context = context;
     return CommonScaffold(
       scaffoldKey: scaffoldKey,
-      appTitle: "Products",
+      appTitle: UIData.appName,
       showDrawer: true,
       showFAB: false,
+      showBottomNav: true,
       actionFirstIcon: Icons.shopping_cart,
       bodyData: bodyData(),
     );

@@ -3,6 +3,8 @@ import 'package:flutter_uikit/ui/widgets/common_drawer.dart';
 import 'package:flutter_uikit/ui/widgets/custom_float.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class CommonScaffold extends StatelessWidget {
   final appTitle;
   final Widget bodyData;
@@ -40,7 +42,7 @@ class CommonScaffold extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
+/*               SizedBox(
                 height: double.infinity,
                 child: new InkWell(
                   radius: 10.0,
@@ -76,7 +78,29 @@ class CommonScaffold extends StatelessWidget {
                     ),
                   ),
                 ),
+              ), */
+              IconButton(
+                icon: Icon(Icons.flash_on),
+                onPressed: (){},
               ),
+              IconButton(
+                icon: Icon(FontAwesomeIcons.store),
+                onPressed: (){},
+              ),
+              IconButton(
+                icon: Icon(FontAwesomeIcons.appleAlt),
+                onPressed: (){},
+              ),
+              IconButton(
+                icon: Icon(FontAwesomeIcons.beer),
+                onPressed: (){},
+              ),
+              
+              IconButton(
+                icon: Icon(FontAwesomeIcons.bone),
+                onPressed: (){},
+              ),
+              
             ],
           ),
         ),

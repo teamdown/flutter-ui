@@ -80,7 +80,7 @@ class ShoppingOnePage extends StatelessWidget {
   Widget productGrid(BuildContext context, List<Product> products) =>
       GridView.count(
         crossAxisCount:
-            MediaQuery.of(_context).orientation == Orientation.portrait ? 2 : 3,
+            MediaQuery.of(_context).orientation == Orientation.portrait ? 1 : 2,
         shrinkWrap: true,
         children: products
             .map((product) => Padding(

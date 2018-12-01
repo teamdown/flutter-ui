@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uikit/ui/widgets/about_tile.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
 class CommonDrawer extends StatelessWidget {
@@ -47,7 +46,6 @@ class CommonDrawer extends StatelessWidget {
             },
           ),
           Divider(),
-          MyAboutTile()
         ],
       ),
     );

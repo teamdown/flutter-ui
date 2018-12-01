@@ -31,79 +31,27 @@ class CommonScaffold extends StatelessWidget {
       this.floatingIcon,
       this.elevation = 4.0});
 
-  Widget myBottomBar() => BottomAppBar(
+  Widget bottomBarButton(IconData iconData) => IconButton(
+        icon: Icon(iconData),
+        onPressed: () {},
+        color: Colors.white,
+      );
+
+  Widget myBottomBar(BuildContext context) => BottomAppBar(
         clipBehavior: Clip.antiAlias,
         shape: CircularNotchedRectangle(),
-        child: Ink(
-          height: 50.0,
-          decoration: new BoxDecoration(
-              gradient: new LinearGradient(colors: UIData.kitGradients)),
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-/*               SizedBox(
-                height: double.infinity,
-                child: new InkWell(
-                  radius: 10.0,
-                  splashColor: Colors.yellow,
-                  onTap: () {},
-                  child: Center(
-                    child: new Text(
-                      "ADD TO WISHLIST",
-                      style: new TextStyle(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              new SizedBox(
-                width: 20.0,
-              ),
-              SizedBox(
-                height: double.infinity,
-                child: new InkWell(
-                  onTap: () {},
-                  radius: 10.0,
-                  splashColor: Colors.yellow,
-                  child: Center(
-                    child: new Text(
-                      "ORDER PAGE",
-                      style: new TextStyle(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ), */
-              IconButton(
-                icon: Icon(Icons.flash_on),
-                onPressed: (){},
-              ),
-              IconButton(
-                icon: Icon(FontAwesomeIcons.store),
-                onPressed: (){},
-              ),
-              IconButton(
-                icon: Icon(FontAwesomeIcons.appleAlt),
-                onPressed: (){},
-              ),
-              IconButton(
-                icon: Icon(FontAwesomeIcons.beer),
-                onPressed: (){},
-              ),
-              
-              IconButton(
-                icon: Icon(FontAwesomeIcons.bone),
-                onPressed: (){},
-              ),
-              
-            ],
-          ),
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            bottomBarButton(Icons.flash_on),
+            bottomBarButton(FontAwesomeIcons.store),
+            bottomBarButton(FontAwesomeIcons.beer),
+            bottomBarButton(FontAwesomeIcons.bone),
+            bottomBarButton(FontAwesomeIcons.appleAlt)
+          ],
         ),
+        color: Theme.of(context).primaryColor,
       );
 
   @override
@@ -113,7 +61,7 @@ class CommonScaffold extends StatelessWidget {
       backgroundColor: backGroundColor != null ? backGroundColor : null,
       appBar: AppBar(
         elevation: elevation,
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(appTitle),
         actions: <Widget>[
           SizedBox(
@@ -148,7 +96,7 @@ class CommonScaffold extends StatelessWidget {
       floatingActionButtonLocation: centerDocked
           ? FloatingActionButtonLocation.centerDocked
           : FloatingActionButtonLocation.endFloat,
-      bottomNavigationBar: showBottomNav ? myBottomBar() : null,
+      bottomNavigationBar: showBottomNav ? myBottomBar(context) : null,
     );
   }
 }

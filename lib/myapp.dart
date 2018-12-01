@@ -15,12 +15,9 @@ class MyApp extends StatelessWidget {
   final materialApp = MaterialApp(
     title: UIData.appName,
     theme: ThemeData(
-        primaryColor: Colors.black,
-        fontFamily: UIData.quickFont,
+        primaryColor: Colors.green,
         primarySwatch: Colors.amber),
     initialRoute: UIData.initialRoute,
-
-    //routes
     routes: <String, WidgetBuilder>{
       UIData.initialRoute: (BuildContext context) => LoginPage(),
       UIData.home: (BuildContext context) => ShoppingOnePage(),
@@ -33,7 +30,7 @@ class MyApp extends StatelessWidget {
                 appTitle: UIData.routeNotFound,
                 icon: FontAwesomeIcons.solidSmile,
                 title: UIData.routeNotFound,
-                message: "Under Development",
+                message: "Page not found",
                 iconColor: Colors.green,
               ),
         ),

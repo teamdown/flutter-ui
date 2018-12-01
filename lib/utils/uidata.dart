@@ -25,16 +25,7 @@ class UIData {
 
   //images
   static const String imageDir = 'assets/images';
-  static const String pkImage = '$imageDir/pk.jpg';
   static const String profileImage = '$imageDir/profile.jpg';
-  static const String blankImage = '$imageDir/blank.jpg';
-  static const String dashboardImage = '$imageDir/dashboard.jpg';
-  static const String loginImage = '$imageDir/login.jpg';
-  static const String paymentImage = '$imageDir/payment.jpg';
-  static const String settingsImage = '$imageDir/setting.jpeg';
-  static const String shoppingImage = '$imageDir/shopping.jpeg';
-  static const String timelineImage = '$imageDir/timeline.jpeg';
-  static const String verifyImage = '$imageDir/verification.jpg';
 
   //login
   static const String enter_code_label = 'Phone Number';
@@ -58,8 +49,9 @@ class UIData {
 
 //colors
   static List<Color> kitGradients = [
-    Colors.blueGrey.shade800,
-    Colors.black87,
+    Colors.green,
+    Colors.greenAccent.shade700,
+    Colors.green,
   ];
   static List<Color> kitGradients2 = [
     Colors.cyan.shade600,

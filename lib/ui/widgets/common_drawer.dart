@@ -10,13 +10,13 @@ class CommonDrawer extends StatelessWidget {
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text(
-              "Pawan Kumar",
+              "Ny Hasinavalona Randriantsarafara",
             ),
             accountEmail: Text(
-              "mtechviral@gmail.com",
+              "randriantsarafaranyhasinavalon@gmail.com",
             ),
             currentAccountPicture: new CircleAvatar(
-              backgroundImage: new AssetImage(UIData.pkImage),
+              backgroundImage: new AssetImage(UIData.profileImage),
             ),
           ),
           new ListTile(

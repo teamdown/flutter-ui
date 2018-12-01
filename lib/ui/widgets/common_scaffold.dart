@@ -18,18 +18,19 @@ class CommonScaffold extends StatelessWidget {
   final centerDocked;
   final elevation;
 
-  CommonScaffold(
-      {this.appTitle,
-      this.bodyData,
-      this.showFAB = false,
-      this.showDrawer = false,
-      this.backGroundColor,
-      this.actionFirstIcon = Icons.search,
-      this.scaffoldKey,
-      this.showBottomNav = false,
-      this.centerDocked = false,
-      this.floatingIcon,
-      this.elevation = 4.0});
+  CommonScaffold({
+    this.appTitle,
+    this.bodyData,
+    this.showFAB = false,
+    this.showDrawer = false,
+    this.backGroundColor,
+    this.actionFirstIcon = Icons.search,
+    this.scaffoldKey,
+    this.showBottomNav = false,
+    this.centerDocked = false,
+    this.floatingIcon,
+    this.elevation = 4.0,
+  });
 
   Widget bottomBarButton(IconData iconData) => IconButton(
         icon: Icon(iconData),

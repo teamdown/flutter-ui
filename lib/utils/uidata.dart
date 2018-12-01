@@ -16,6 +16,7 @@ class UIData {
 
   //strings
   static const String appName = 'Fresh Discount';
+  static const String profilPageName = 'Profil';
 
   //fonts
   static const String quickFont = 'Quicksand';

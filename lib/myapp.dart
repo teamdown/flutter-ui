@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     routes: <String, WidgetBuilder>{
       UIData.initialRoute: (BuildContext context) => LoginPage(),
       UIData.home: (BuildContext context) => ShoppingOnePage(),
-      UIData.registration: (BuildContext) => RegistrationPage(),
+      UIData.registration: (BuildContext context) => RegistrationPage(),
       UIData.payment: (BuildContext context) => CreditCardPage(),
       UIData.details: (BuildContext context) => ProductDetailPage(),
       UIData.profile: (BuildContext context) => ProfilePage()

@@ -38,7 +38,7 @@ class ShoppingOnePage extends StatelessWidget {
                 ),
                 Text(product.price,
                     style: TextStyle(
-                        color: Colors.yellow,
+                        color: Colors.yellowAccent,
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold))
               ],
@@ -62,7 +62,7 @@ class ShoppingOnePage extends StatelessWidget {
             children: <Widget>[
               Icon(
                 Icons.star,
-                color: Colors.cyanAccent,
+                color: Colors.greenAccent,
                 size: 10.0,
               ),
               SizedBox(
@@ -86,7 +86,7 @@ class ShoppingOnePage extends StatelessWidget {
             .map((product) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
-                    splashColor: Colors.yellow,
+                    splashColor: Colors.yellowAccent,
                     onTap: () {
                       Navigator.of(context).pushNamed(UIData.details);
                     },

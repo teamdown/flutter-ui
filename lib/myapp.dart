@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     title: UIData.appName,
     theme: ThemeData(
         primaryColor: Colors.green,
+        accentColor: Colors.greenAccent,
         primarySwatch: Colors.amber),
     initialRoute: UIData.initialRoute,
     routes: <String, WidgetBuilder>{

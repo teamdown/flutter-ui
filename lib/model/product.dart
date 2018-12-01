@@ -12,8 +12,6 @@ class Product {
   List<ProductColor> colors;
   int quantity = 0;
 
-  
-
   Product(
       {this.name,
       this.image,
@@ -25,8 +23,7 @@ class Product {
       this.sizes,
       this.colors,
       this.quantity});
-
-  
+      
 }
 
 class ProductColor {

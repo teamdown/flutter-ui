@@ -18,17 +18,6 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black,
         fontFamily: UIData.quickFont,
         primarySwatch: Colors.amber),
-    debugShowCheckedModeBanner: false,
-    showPerformanceOverlay: false,
-    /* localizationsDelegates: [
-        const TranslationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ], */
-    /* supportedLocales: [
-        const Locale("en", "US"),
-        const Locale("hi", "IN"),
-      ], */
     initialRoute: UIData.initialRoute,
 
     //routes

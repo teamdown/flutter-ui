@@ -7,6 +7,7 @@ class UIData {
   //routes
   static const String initialRoute = '/';
   static const String login = '/login';
+  static const String registration = '/registration';
   static const String profile = '/profile';
   static const String home = '/home';
   static const String payment = '/payment';
@@ -27,15 +28,28 @@ class UIData {
   static const String imageDir = 'assets/images';
   static const String profileImage = '$imageDir/profile.jpg';
 
-  //login
-  static const String enter_code_label = 'Phone Number';
-  static const String enter_code_hint = '10 Digit Phone Number';
-  static const String enter_otp_label = 'OTP';
-  static const String enter_otp_hint = '4 Digit OTP';
-  static const String get_otp = 'Get OTP';
-  static const String resend_otp = 'Resend OTP';
-  static const String enter_valid_number = 'Enter 10 digit phone number';
-  static const String enter_valid_otp = 'Enter 4 digit otp';
+  static const String mainGreetingText = '$appName';
+
+
+  //login 
+  static const String loginGreetingText = 'Identifier vous pour continuer';
+  static const String registrationGreetingText = 'Créer un compte pour continuer';
+  
+  static const String userNameLabel = "Nom d'utilisateur";
+  static const String userNameHintText = "Taper votre adresse e-mail ou votre nom d'utilisateur";
+  
+  static const String passwordLabel = 'Mot de passe';
+  static const String passwordHintText = 'Taper votre mot de passe';
+
+  static const String confirmationLabel = "Confirmation";
+  static const String confirmationHintText = 'Taper à nouveau votre mot de passe';
+  
+  static const String emailLabel = 'Adresse e-mail';
+  static const String emailHintText = 'Taper votre mot de passe';
+
+  static const String signIn = "S'Inscrire";
+  static const String signUp = 'Créer un compte';
+  
 
   //gneric
   static const String error = 'Error';

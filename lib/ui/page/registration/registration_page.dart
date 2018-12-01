@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
-class LoginPage extends StatelessWidget {
+class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,10 @@ class LoginPage extends StatelessWidget {
   loginBody(BuildContext context) => SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[loginHeader(context), loginFields(context)],
+          children: <Widget>[
+            loginHeader(context),
+            loginFields(context),
+          ],
         ),
       );
 
@@ -24,7 +27,7 @@ class LoginPage extends StatelessWidget {
         children: <Widget>[
           FlutterLogo(
             colors: Colors.green,
-            size: 80.0,
+            size: 50.0,
           ),
           SizedBox(
             height: 30.0,
@@ -37,7 +40,7 @@ class LoginPage extends StatelessWidget {
             height: 5.0,
           ),
           Text(
-            UIData.loginGreetingText,
+            UIData.registrationGreetingText,
             style: TextStyle(color: Colors.grey),
           ),
         ],
@@ -49,7 +52,7 @@ class LoginPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
               child: TextField(
                 maxLines: 1,
                 decoration: InputDecoration(
@@ -69,6 +72,39 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              child: TextField(
+                maxLines: 1,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: UIData.emailHintText,
+                  labelText: UIData.emailLabel,
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              child: TextField(
+                maxLines: 1,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: UIData.passwordHintText,
+                  labelText: UIData.passwordLabel,
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
+              child: TextField(
+                maxLines: 1,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: UIData.confirmationHintText,
+                  labelText: UIData.confirmationLabel,
+                ),
+              ),
+            ),
             SizedBox(
               height: 30.0,
             ),
@@ -79,7 +115,7 @@ class LoginPage extends StatelessWidget {
                 padding: EdgeInsets.all(12.0),
                 shape: StadiumBorder(),
                 child: Text(
-                  UIData.signIn.toUpperCase(),
+                  UIData.signUp.toUpperCase(),
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.green,
@@ -89,15 +125,15 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 25.0,
+              height: 10.0,
             ),
             InkWell(
               child: Text(
-                UIData.signUp,
+                UIData.signIn,
                 style: TextStyle(color: Colors.grey),
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(UIData.registration);
+                Navigator.of(context).pop();
               },
             )
           ],

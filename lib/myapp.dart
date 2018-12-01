@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_uikit/ui/page/login/login_page.dart';
+import 'package:flutter_uikit/ui/page/registration/registration_page.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/product_detail_page.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     routes: <String, WidgetBuilder>{
       UIData.initialRoute: (BuildContext context) => LoginPage(),
       UIData.home: (BuildContext context) => ShoppingOnePage(),
+      UIData.registration: (BuildContext) => RegistrationPage(),
       UIData.payment: (BuildContext context) => CreditCardPage(),
       UIData.details: (BuildContext context) => ProductDetailPage(),
       UIData.profile: (BuildContext context) => ProfilePage()

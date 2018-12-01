@@ -99,7 +99,6 @@ class ShoppingOnePage extends StatelessWidget {
                         children: <Widget>[
                           imageStack(product.image),
                           descStack(product),
-                          ratingStack(product.rating),
                         ],
                       ),
                     ),

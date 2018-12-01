@@ -21,13 +21,6 @@ class ProductDesc extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.w700),
               ),
-              subtitle: new Text(
-                product.brand,
-                style: new TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.normal),
-              ),
               trailing: new Text(product.price,
                   style: new TextStyle(
                       fontSize: 25.0,

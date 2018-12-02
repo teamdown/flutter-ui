@@ -9,6 +9,7 @@ class UIData {
   static const String login = '/login';
   static const String registration = '/registration';
   static const String profile = '/profile';
+  static const String editProfile = '/editProfile';
   static const String home = '/home';
   static const String payment = '/payment';
   static const String details = '/details';
@@ -17,6 +18,7 @@ class UIData {
   //strings
   static const String appName = 'Fresh Discount';
   static const String profilPageName = 'Profil';
+  static const String editProfilPageName = 'Modifier le profil';
 
   //fonts
   static const String quickFont = 'Quicksand';
@@ -50,6 +52,21 @@ class UIData {
 
   static const String signIn = "S'Inscrire";
   static const String signUp = 'Créer un compte';
+
+  static const String phoneLabel = 'Téléphone';
+  static const String phoneHintText = 'Modifier votre numéro de téléphone';
+  
+  static const String provinceLabel = 'Province';
+  static const String provinceHintText = 'Modifier le province';
+  
+  static const String districtLabel = 'Région';
+  static const String districtHintText = 'Modifier la région';
+
+  static const String streetLabel = 'Téléphone';
+  static const String streetHintText = 'Modifier votre numéro de téléphone';
+
+  static const String postalCodeLabel = 'Code Postal';
+  static const String postalCodeHintText = 'Modifier votre code postal';
   
 
   //gneric

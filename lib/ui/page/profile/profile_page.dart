@@ -4,6 +4,7 @@ import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
 
 import 'package:flutter_uikit/ui/widgets/profile_card.dart';
+import 'package:flutter_uikit/ui/widgets/custom_card.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -48,100 +49,71 @@ class ProfilePage extends StatelessWidget {
 
   Widget accountColumn() => Column(
         children: <Widget>[
-          ProfileCard(
-            icon: Icons.person,
-            title: 'Prénom',
-            subtitle: 'Ny Hasinavalona',
-          ),
-          ProfileCard(
-            icon: Icons.person,
-            title: 'Nom',
-            subtitle: 'Randriantsarafara',
-          ),
-          ProfileCard(
-            icon: Icons.date_range,
-            title: 'Date de naissance',
-            subtitle: '25 Juillet 1997',
-          ),
-          ProfileCard(
-            icon: Icons.email,
-            title: 'Adresse e-mail',
-            subtitle: 'randriantsarafaranyhasinavalon@gmail.com',
-          ),
+          CardItem(icon: Icons.date_range, title: '25 Juillet 1997'),
+          CardItem(
+              icon: Icons.email,
+              title: 'randriantsarafaranyhasinavalon@gmail.com'),
         ],
       );
 
   Widget locationColumn() => Column(
         children: <Widget>[
-          ProfileCard(
+          CardItem(icon: Icons.phone, title: '+261 32 65 308 06'),
+          CardItem(
             icon: Icons.gps_fixed,
-            title: 'Téléphone',
-            subtitle: '+261 32 65 308 06',
+            title: 'Antananarivo',
           ),
-          ProfileCard(
-            icon: Icons.gps_fixed,
-            title: 'Province',
-            subtitle: 'Antananarivo',
-          ),
-          ProfileCard(
-            icon: Icons.gps_fixed,
-            title: 'Province',
-            subtitle: 'Antananarivo',
-          ),
-          ProfileCard(
+          CardItem(
             icon: Icons.location_on,
-            title: 'Région',
-            subtitle: 'Antananarivo',
+            title: 'Analamanga',
           ),
-          ProfileCard(
+          CardItem(
             icon: Icons.location_city,
-            title: 'Quartier',
-            subtitle: 'Anjanahary',
+            title: 'Anjanahary',
           ),
-          ProfileCard(
-            icon: Icons.location_city,
-            title: 'Code Postal',
-            subtitle: '101',
+          CardItem(
+            icon: Icons.local_post_office,
+            title: '101',
           ),
         ],
       );
 
-  Widget bodyData() {
+  Widget bodyData(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          profileColumn(),
+          profileColumn(),         
           CommonDivider(),
-          accountColumn(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 10.0,
-            ),
-            child: CommonDivider(),
+          CustomCard(
+            title: 'Informations',
+            child: accountColumn(),
+            buttonCallback: () {
+              Navigator.of(context).pushNamed(UIData.editProfile);
+            },
           ),
-          locationColumn(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 10.0,
-            ),
-            child: CommonDivider(),
+          CommonDivider(),
+          CustomCard(
+            title: 'Livraison',
+            child: locationColumn(),
+            buttonCallback: () {
+              Navigator.of(context).pushNamed(UIData.editProfile);
+            },
           ),
+          CommonDivider(),
         ],
       ),
     );
   }
 
-  Widget _scaffold() => CommonScaffold(
+  Widget _scaffold(BuildContext context) => CommonScaffold(
         appTitle: UIData.profilPageName,
-        bodyData: bodyData(),
-        showFAB: true,
-        showDrawer: true,
-        floatingIcon: Icons.edit,
+        bodyData: bodyData(context),
+        showDrawer: true
       );
 
   @override
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
-    return _scaffold();
+    return _scaffold(context);
   }
 }

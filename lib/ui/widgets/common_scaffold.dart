@@ -17,6 +17,7 @@ class CommonScaffold extends StatelessWidget {
   final floatingIcon;
   final centerDocked;
   final elevation;
+  final VoidCallback floatingCallback;
 
   CommonScaffold({
     this.appTitle,
@@ -30,6 +31,7 @@ class CommonScaffold extends StatelessWidget {
     this.centerDocked = false,
     this.floatingIcon,
     this.elevation = 4.0,
+    this.floatingCallback
   });
 
   Widget bottomBarButton(IconData iconData) => IconButton(
@@ -91,7 +93,7 @@ class CommonScaffold extends StatelessWidget {
                     )
                   : null,
               icon: floatingIcon,
-              qrCallback: () {},
+              qrCallback: this.floatingCallback,
             )
           : null,
       floatingActionButtonLocation: centerDocked

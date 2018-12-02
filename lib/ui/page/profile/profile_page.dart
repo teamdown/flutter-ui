@@ -75,6 +75,16 @@ class ProfilePage extends StatelessWidget {
         children: <Widget>[
           ProfileCard(
             icon: Icons.gps_fixed,
+            title: 'Téléphone',
+            subtitle: '+261 32 65 308 06',
+          ),
+          ProfileCard(
+            icon: Icons.gps_fixed,
+            title: 'Province',
+            subtitle: 'Antananarivo',
+          ),
+          ProfileCard(
+            icon: Icons.gps_fixed,
             title: 'Province',
             subtitle: 'Antananarivo',
           ),
@@ -87,7 +97,12 @@ class ProfilePage extends StatelessWidget {
             icon: Icons.location_city,
             title: 'Quartier',
             subtitle: 'Anjanahary',
-          )
+          ),
+          ProfileCard(
+            icon: Icons.location_city,
+            title: 'Code Postal',
+            subtitle: '101',
+          ),
         ],
       );
 

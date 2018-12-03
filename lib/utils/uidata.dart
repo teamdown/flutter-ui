@@ -12,6 +12,7 @@ class UIData {
   static const String editProfile = '/editProfile';
   static const String home = '/home';
   static const String payment = '/payment';
+  static const String validation = '/validation';
   static const String details = '/details';
   static const String notFound = '/404';
 
@@ -19,6 +20,7 @@ class UIData {
   static const String appName = 'Fresh Discount';
   static const String profilPageName = 'Profil';
   static const String editProfilPageName = 'Modifier le profil';
+  static const String validationPageName = 'Récapitulatif';
 
   //fonts
   static const String quickFont = 'Quicksand';

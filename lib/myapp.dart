@@ -5,6 +5,7 @@ import 'package:flutter_uikit/ui/page/registration/registration_page.dart';
 import 'package:flutter_uikit/ui/page/profile/profile_page.dart';
 import 'package:flutter_uikit/ui/page/profile/edit_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/shopping_page.dart';
+import 'package:flutter_uikit/ui/page/cart/cart_page.dart';
 import 'package:flutter_uikit/ui/page/shopping/product_detail_page.dart';
 import 'package:flutter_uikit/ui/page/payment/credit_card_page.dart';
 import 'package:flutter_uikit/ui/page/notfound/notfound_page.dart';
@@ -20,10 +21,11 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green,
         accentColor: Colors.greenAccent,
         primarySwatch: Colors.amber),
-    initialRoute: UIData.home,
+    initialRoute: UIData.initialRoute,
     routes: <String, WidgetBuilder>{
       UIData.initialRoute: (BuildContext context) => LoginPage(),
       UIData.home: (BuildContext context) => ShoppingOnePage(),
+      UIData.validation: (BuildContext context) => CartPage(),
       UIData.registration: (BuildContext context) => RegistrationPage(),
       UIData.payment: (BuildContext context) => CreditCardPage(),
       UIData.details: (BuildContext context) => ProductDetailPage(),

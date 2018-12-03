@@ -17,6 +17,7 @@ class CommonScaffold extends StatelessWidget {
   final floatingIcon;
   final centerDocked;
   final elevation;
+  final VoidCallback firstIconCallback;
   final VoidCallback floatingCallback;
 
   CommonScaffold({
@@ -31,6 +32,7 @@ class CommonScaffold extends StatelessWidget {
     this.centerDocked = false,
     this.floatingIcon,
     this.elevation = 4.0,
+    this.firstIconCallback,
     this.floatingCallback
   });
 
@@ -71,9 +73,7 @@ class CommonScaffold extends StatelessWidget {
             width: 5.0,
           ),
           IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(UIData.payment);
-            },
+            onPressed: this.firstIconCallback,
             icon: Icon(actionFirstIcon),
           ),
           IconButton(

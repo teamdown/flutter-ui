@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/ui/widgets/common_divider.dart';
 import 'package:flutter_uikit/ui/widgets/common_scaffold.dart';
 import 'package:flutter_uikit/ui/widgets/profile_tile.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flutter_uikit/ui/widgets/profile_card.dart';
 import 'package:flutter_uikit/ui/widgets/custom_card.dart';
@@ -47,9 +48,18 @@ class ProfilePage extends StatelessWidget {
         ),
       );
 
+  Widget credential() => Column(
+    children: <Widget>[
+      CardItem(
+        icon: FontAwesomeIcons.lock,
+        title: '* * * * * * * * * *',
+      )
+    ],
+  );
+
   Widget accountColumn() => Column(
         children: <Widget>[
-          CardItem(icon: Icons.date_range, title: '25 Juillet 1997'),
+          CardItem(icon: Icons.date_range, title: '25 Juillet 1997',),
           CardItem(
               icon: Icons.email,
               title: 'randriantsarafaranyhasinavalon@gmail.com'),
@@ -81,8 +91,15 @@ class ProfilePage extends StatelessWidget {
   Widget bodyData(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           profileColumn(),         
+          CommonDivider(),
+          CustomCard(
+            title: 'Mot de passe',
+            child: credential(),
+            buttonCallback: () {}, 
+          ),
           CommonDivider(),
           CustomCard(
             title: 'Informations',

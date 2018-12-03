@@ -140,6 +140,9 @@ class ShoppingOnePage extends StatelessWidget {
       showFAB: false,
       showBottomNav: true,
       actionFirstIcon: Icons.shopping_cart,
+      firstIconCallback: () {
+        Navigator.of(context).pushNamed(UIData.validation);
+      }, 
       bodyData: bodyData(),
     );
   }
